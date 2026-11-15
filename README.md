@@ -1,208 +1,172 @@
-# 🛒 E-Commerce Transactions — Exploratory Data Analysis (EDA)
+# 🛒 ApexPlanet Data Analytics Internship — Master Portfolio
 
 [![Python](https://img.shields.io/badge/Python-3.10%2B-blue.svg)](https://www.python.org/)
 [![Pandas](https://img.shields.io/badge/Pandas-2.x-150458.svg)](https://pandas.pydata.org/)
-[![NumPy](https://img.shields.io/badge/NumPy-2.x-013243.svg)](https://numpy.org/)
-[![Seaborn](https://img.shields.io/badge/Seaborn-Visualization-blueviolet.svg)](https://seaborn.pydata.org/)
-[![ApexPlanet](https://img.shields.io/badge/Internship-ApexPlanet%20Solutions-orange.svg)](#-internship-context)
+[![PostgreSQL](https://img.shields.io/badge/PostgreSQL-15%2B-336791.svg)](https://www.postgresql.org/)
+[![Matplotlib](https://img.shields.io/badge/Matplotlib-Visualization-11557c.svg)](https://matplotlib.org/)
+[![Seaborn](https://img.shields.io/badge/Seaborn-Statistical%20Viz-3776ab.svg)](https://seaborn.pydata.org/)
+[![Plotly](https://img.shields.io/badge/Plotly-Interactive%20Viz-3f4f75.svg)](https://plotly.com/)
+[![scikit-learn](https://img.shields.io/badge/scikit--learn-ML%20Pipelines-F7931E?logo=scikit-learn&logoColor=white)](https://scikit-learn.org/)
+[![SciPy](https://img.shields.io/badge/SciPy-Hypothesis%20Testing-8CAAE6?logo=scipy&logoColor=black)](https://scipy.org/)
+[![Power BI](https://img.shields.io/badge/Power%20BI-Executive%20Dashboard-F2C811?logo=powerbi&logoColor=black)](https://powerbi.microsoft.com/)
+[![Internship](https://img.shields.io/badge/Internship-ApexPlanet%20Solutions-orange.svg)](#-internship-context)
 
-An end-to-end exploratory data analysis project analyzing **50,000 global e-commerce transactions** across multiple product categories, geographic regions, payment gateways, and customer demographic segments.
+Master repository documenting the completed data analytics projects for the **ApexPlanet Solutions Data Analytics Internship**, encompassing exploratory data analysis, relational SQL database modeling, advanced statistical visualization, and interactive business intelligence dashboarding.
 
 ---
 
 ## 📌 Internship Context
-
-This project was developed as part of the **Data Analytics Internship** at **ApexPlanet Solutions**. The objective is to apply industry-standard analytical workflows, rigorous data cleaning, descriptive statistics, customer segmentation, and visual storytelling to uncover actionable commercial insights from raw transaction records.
-
----
-
-## 📊 Project Overview & Objectives
-
-E-commerce businesses operate in fast-moving, multi-currency, and geographically diverse environments. Understanding consumer behavior, sales drivers, and regional trends is vital for inventory forecasting, customer retention, and targeted marketing campaigns.
-
-### Key Objectives:
-- **Data Audit & Integrity:** Verify data completeness, detect anomalies, check missingness, and ensure type consistency.
-- **Univariate & Bivariate Exploration:** Analyze distributions of transaction amounts, category frequencies, payment preferences, and regional order volume.
-- **Financial & Category Breakdown:** Evaluate total gross revenue and average transaction value (AOV) across product lines.
-- **Geographic Spend Analysis:** Identify top revenue-generating markets and assess regional purchasing power parity.
-- **Temporal & Trend Analysis:** Map sales trajectories over a 2-year horizon (2023–2025) to identify seasonal shifts.
-- **Customer Segmentation & Repeat Behavior:** Segment users by age cohorts, assess customer retention patterns, and profile high-value consumers.
-- **Cross-Tabulation Matrix:** Construct multidimensional pivot views comparing countries against product categories.
+- **Organization:** **ApexPlanet Solutions**
+- **Intern:** Siddhesh
+- **Role:** Data Analytics Intern
+- **Academic Background:** 1st Year B.Tech in Artificial Intelligence & Data Science
+- **Dataset:** 50,000 Global E-Commerce Transactions (\$25.16M Gross Sales)
 
 ---
 
-## 🗂️ Repository Structure
+## 🗺️ Roadmap & Project Navigation
 
 ```text
 apexplanet-data-analytics/
-├── notebooks/
-│   ├── Ecommerce.ipynb               # Primary EDA and visualization notebook
-│   └── ecommerce_transactions.csv    # Source transactions dataset (50,000 rows)
-├── dashboards/                       # Future BI dashboard assets (Power BI / Tableau)
-├── data/                             # Data storage (raw, processed, staging)
-├── reports/                          # Generated analytical reports & documentation
-├── scripts/                          # Reusable data pipeline & helper scripts
-└── README.md                         # Project documentation and summary
+├── data/
+│   └── ecommerce_transactions.csv                      # Master source dataset (50,000 rows x 8 columns)
+│
+├── task_1_eda/                                         # Task 1: Exploratory Data Analysis & Data Hygiene
+│   ├── data/
+│   │   └── ecommerce_transactions.csv                  # Standalone dataset copy
+│   ├── notebooks/
+│   │   ├── Task_1_Exploratory_Data_Analysis.ipynb      # Master executed EDA Notebook
+│   │   ├── Ecommerce.ipynb                             # Original EDA exploration notebook
+│   │   └── 01_data_cleaning_eda.ipynb                  # Environment verification & smoke test
+│   ├── reports/
+│   │   └── Task_1_Summary.md                           # Executive EDA & Data Quality Summary Report
+│   ├── requirements.txt                                # Task 1 dependencies
+│   └── README.md                                       # Detailed Task 1 Guide & 15+ Viva Voce Questions
+│
+├── task_2_sql_database/                                # Task 2: SQL & PostgreSQL Relational Analytics
+│   ├── data/
+│   │   └── ecommerce_transactions.csv                  # Dataset for database ingestion
+│   ├── scripts/
+│   │   ├── ecommerce.sql                               # Comprehensive DDL, DML & Window Function Queries
+│   │   └── db_utils.py                                 # Modular SQLAlchemy connection & query execution utility
+│   ├── notebooks/
+│   │   ├── Task_2_Postgres_Analytics.ipynb              # Executed PostgreSQL analytics notebook
+│   │   ├── Postgres.ipynb                              # Original PostgreSQL exploration notebook
+│   │   └── db_utils.ipynb                              # Connection utility notebook
+│   ├── reports/
+│   │   └── Task_2_Summary.md                           # Executive SQL & Relational Analytics Summary Report
+│   ├── requirements.txt                                # Task 2 dependencies (SQLAlchemy, psycopg2-binary)
+│   └── README.md                                       # Detailed Task 2 Guide & 15+ Viva Voce Questions
+│
+├── task_3_visualization/                               # Task 3: Comprehensive Data Visualization & Dashboarding
+│   ├── data/
+│   │   └── ecommerce_transactions.csv                  # Standalone dataset copy
+│   ├── dashboards/
+│   │   └── Ecommerce_Sales_Dashboard.html              # Interactive Executive Dashboard Application
+│   ├── notebooks/
+│   │   └── Task_3_Data_Visualization.ipynb             # Fully executed Task 3 Notebook (Matplotlib, Seaborn, Plotly)
+│   ├── visualizations/                                 # 10 High-Res Exported Charts (PNG & HTML)
+│   │   ├── monthly_revenue.png                         # Matplotlib Line Chart
+│   │   ├── category_revenue.png                        # Matplotlib Bar Chart
+│   │   ├── purchase_distribution.png                   # Matplotlib Histogram + KDE
+│   │   ├── age_purchase_scatter.png                    # Matplotlib Scatter Plot + Trendline
+│   │   ├── correlation_heatmap.png                     # Seaborn Correlation Matrix Heatmap
+│   │   ├── pairplot.png                                # Seaborn Multivariate Pairplot
+│   │   ├── category_boxen.png                          # Seaborn Letter-Value Boxen Plot
+│   │   ├── monthly_revenue.html                        # Plotly Interactive Dual-Axis Time Series
+│   │   ├── category_revenue.html                       # Plotly Interactive Category Breakdown
+│   │   └── country_revenue.html                        # Plotly Interactive Global Choropleth Map
+│   ├── powerbi/                                        # Power BI Assets, DAX Library & Manuals
+│   │   ├── ecommerce_transactions_cleaned_for_powerbi.csv # Cleaned CSV for Power BI Desktop
+│   │   ├── DAX_Measures_and_Data_Model.md             # Complete DAX Formula Library
+│   │   ├── Power_BI_Step_by_Step_Build_Guide.md        # Step-by-Step Power BI Desktop Construction Guide
+│   │   └── PowerBI_Interactive_Dashboard.html          # Interactive Executive Dashboard (Client-Side DAX Engine)
+│   ├── reports/
+│   │   └── Task_3_Summary.md                           # Executive Analytical Summary Report
+│   ├── requirements.txt                                # Task 3 dependencies
+│   └── README.md                                       # Detailed Task 3 Documentation & Viva Voce Guide
+│
+└── task_4_advanced_analytics/                          # Task 4: Advanced Analytics & Basic Predictive Modeling
+    ├── data/
+    │   └── ecommerce_transactions.csv                  # Standalone dataset copy
+    ├── notebooks/
+    │   └── Task_4_Advanced_Analytics.ipynb             # Fully executed Task 4 Notebook (SciPy, K-Means, ML Pipeline)
+    ├── visualizations/                                 # 8 High-Res Publication Figures (PNG)
+    │   ├── statistical_analysis.png                    # Distribution, Welch's t-test boxplot, Chi-Square heatmap
+    │   ├── monthly_revenue.png                         # Monthly gross revenue & order volume dual-axis chart
+    │   ├── moving_average_forecast.png                 # Rolling 3-month moving average forecast vs actual test data
+    │   ├── time_series_decomposition.png               # Additive time-series decomposition (Trend, Seasonality, Residual)
+    │   ├── elbow_method.png                            # Inertia (WCSS) & Silhouette score diagnostics
+    │   ├── customer_clusters.png                       # 2D PCA projection of K-Means customer segments
+    │   ├── actual_vs_predicted.png                     # Actual vs predicted purchase amount scatter plot
+    │   └── residual_plot.png                           # Residual distribution and homoscedasticity check
+    ├── models/
+    │   └── linear_regression_pipeline.joblib           # Serialized scikit-learn Pipeline (ColumnTransformer + Model)
+    ├── reports/
+    │   └── Task_4_Summary.md                           # Comprehensive executive summary report
+    ├── requirements.txt                                # Task 4 environment dependencies
+    └── README.md                                       # Detailed Task 4 documentation & 20+ Viva Voce questions
 ```
 
 ---
 
-## 📁 Dataset Description
+## 🚀 Tasks Overview & Milestones
 
-The dataset covers **50,000 customer transactions** recorded between **March 9, 2023** and **March 8, 2025** (a 24-month continuous window).
+### 📍 [Task 1: Exploratory Data Analysis & Data Hygiene](file:///c:/Users/Siddhesh/Desktop/coding/apexplanet-data-analytics/task_1_eda/)
+- **Primary Deliverables:** [`task_1_eda/notebooks/Task_1_Exploratory_Data_Analysis.ipynb`](file:///c:/Users/Siddhesh/Desktop/coding/apexplanet-data-analytics/task_1_eda/notebooks/Task_1_Exploratory_Data_Analysis.ipynb) & [`task_1_eda/README.md`](file:///c:/Users/Siddhesh/Desktop/coding/apexplanet-data-analytics/task_1_eda/README.md)
+- **Key Focus:** Dataset ingestion, missing value audit (0 nulls), duplicate removal (0 duplicates), datetime parsing, summary statistics, and categorical cardinality checks across 10 countries and 8 product categories.
 
-### Data Schema
+### 📍 [Task 2: SQL & Relational Database Analytics](file:///c:/Users/Siddhesh/Desktop/coding/apexplanet-data-analytics/task_2_sql_database/)
+- **Primary Deliverables:** [`task_2_sql_database/scripts/ecommerce.sql`](file:///c:/Users/Siddhesh/Desktop/coding/apexplanet-data-analytics/task_2_sql_database/scripts/ecommerce.sql) & [`task_2_sql_database/notebooks/Task_2_Postgres_Analytics.ipynb`](file:///c:/Users/Siddhesh/Desktop/coding/apexplanet-data-analytics/task_2_sql_database/notebooks/Task_2_Postgres_Analytics.ipynb)
+- **Key Focus:** Relational schema design, PostgreSQL database ingestion via SQLAlchemy, `GROUP BY`, `HAVING` filters, aggregate financial calculations, and analytical `ROW_NUMBER()` window functions to rank transactions and customers.
 
-| Column Name | Data Type | Non-Null Count | Description |
-| :--- | :--- | :--- | :--- |
-| `Transaction_ID` | `int64` | 50,000 | Unique numeric identifier for each transaction |
-| `User_Name` | `object` | 50,000 | Customer identifier / full name |
-| `Age` | `int64` | 50,000 | Age of the customer (ranging from 18 to 70) |
-| `Country` | `object` | 50,000 | Country where the purchase originated (10 countries) |
-| `Product_Category`| `object` | 50,000 | Category of item purchased (8 distinct categories) |
-| `Purchase_Amount` | `float64` | 50,000 | Transaction value in USD ($5.04 – $999.98) |
-| `Payment_Method`  | `object` | 50,000 | Payment channel utilized (6 payment types) |
-| `Transaction_Date`| `datetime64[ns]`| 50,000 | Timestamp of transaction (parsed from raw string) |
+### 📍 [Task 3: Data Visualization & Executive Dashboarding](file:///c:/Users/Siddhesh/Desktop/coding/apexplanet-data-analytics/task_3_visualization/)
+- **Primary Deliverables:** [`task_3_visualization/`](file:///c:/Users/Siddhesh/Desktop/coding/apexplanet-data-analytics/task_3_visualization/) & [`task_3_visualization/README.md`](file:///c:/Users/Siddhesh/Desktop/coding/apexplanet-data-analytics/task_3_visualization/README.md)
+- **Key Focus:**
+  - **Matplotlib:** Publication-quality static charts (Line, Bar, Histogram+KDE, Scatter+Trendline).
+  - **Seaborn:** Advanced statistical graphics (Correlation Heatmap, Multivariate Pairplot, Letter-Value Boxen Plot).
+  - **Plotly:** Interactive web visualizations with hover tooltips, zooming, and date range sliders.
+  - **Power BI:** Executive dashboard architecture, comprehensive DAX formula library (`Total Sales`, `Total Orders`, `Distinct Customer Names`, `AOV`), dynamic slicers, matrix cross-tabulation, and an in-memory interactive web replica (`PowerBI_Interactive_Dashboard.html`).
+  - **Documentation & Viva Prep:** Detailed executive summary report and 15 student viva questions with answers.
 
-### Key Summary Statistics
-
-- **Total Records:** 50,000 transactions
-- **Total Gross Revenue:** \$25,157,989.23 (~**\$25.16 Million USD**)
-- **Average Transaction Value (AOV):** \$503.16 (Median: \$503.11, Std Dev: \$286.56)
-- **Customer Age:** Mean: 43.97 years | Range: 18 – 70 years
-- **Missing Values / Duplicates:** 0 null values, 0 duplicate rows detected
-
----
-
-## 🔍 Key Findings & Analysis Summary
-
-### 1. Data Cleaning & Integrity Check
-- **Zero Missing / Duplicated Data:** The dataset exhibits complete data hygiene with 0 null values across all 8 fields and 0 duplicate transaction rows.
-- **Datetime Parsing:** `Transaction_Date` converted smoothly to standard `datetime64[ns]` without unparseable (NaT) entries.
-
-### 2. Product Category Performance
-All 8 product categories generated steady transaction volume and revenue, with individual category revenues ranging between \$3.05M and \$3.20M:
-
-| Product Category | Total Revenue (USD) | Order Count | Performance Highlight |
-| :--- | :---: | :---: | :--- |
-| **Sports** | \$3,195,335.90 | 6,346 | Top revenue-generating category |
-| **Toys** | \$3,185,652.36 | 6,331 | Strong year-round gift & hobby demand |
-| **Books** | \$3,181,897.30 | 6,321 | Consistent high-frequency orders |
-| **Clothing** | \$3,171,225.96 | 6,303 | Core lifestyle category |
-| **Electronics** | \$3,133,965.04 | 6,228 | High-demand tech goods |
-| **Grocery** | \$3,123,579.52 | 6,208 | Steady non-discretionary volume |
-| **Home & Kitchen**| \$3,108,945.78 | 6,179 | Regular household basket sizes |
-| **Beauty** | \$3,057,387.79 | 6,084 | Stable personal care segment |
-
-### 3. Geographic Distribution
-The user base spans 10 countries with balanced geographic performance (~5,000 transactions per market):
-
-- **Top Grossing Markets:**
-  - 🇫🇷 **France:** \$2,545,739.19 (Avg: \$509.86)
-  - 🇨🇦 **Canada:** \$2,544,335.12 (Avg: \$500.66)
-  - 🇺🇸 **USA:** \$2,541,220.22 (Avg: \$510.39 — highest average ticket size)
-  - 🇲🇽 **Mexico:** \$2,534,475.67 (Avg: \$500.98)
-  - 🇦🇺 **Australia:** \$2,514,911.65 (Avg: \$504.50)
-  - 🇧🇷 **Brazil:** \$2,507,287.54 (Avg: \$506.73)
-  - 🇮🇳 **India:** \$2,503,542.71 (Avg: \$501.11)
-  - 🇩🇪 **Germany:** \$2,502,442.20 (Avg: \$495.83)
-  - 🇯🇵 **Japan:** \$2,492,312.20 (Avg: \$502.48)
-  - 🇬🇧 **UK:** \$2,471,723.15 (Avg: \$499.24)
-
-### 4. Payment Method Preferences
-Adoption is distributed evenly across 6 payment methods:
-- **Cash on Delivery (COD):** \$4,276,269.38 (8,434 transactions, Avg: \$507.03) — highest total spend
-- **UPI:** \$4,259,355.65 (8,477 transactions, Avg: \$502.46)
-- **Debit Card:** \$4,234,776.21 (8,355 transactions, Avg: \$506.86)
-- **PayPal:** \$4,173,529.85 (8,250 transactions, Avg: \$505.88)
-- **Credit Card:** \$4,150,547.15 (8,310 transactions, Avg: \$499.46)
-- **Net Banking:** \$4,063,511.41 (8,174 transactions, Avg: \$497.13)
-
-### 5. Temporal Trends & Seasonality
-- **Monthly Revenue Run-Rate:** Average monthly revenue consistently tracks between **\$1.0M and \$1.1M** across all full 24 months.
-- **Top Revenue Month:** **July 2023** recorded the peak monthly gross revenue of **\$1,105,402.88** (2,154 orders).
-- **Top Volume Month:** **January 2024** achieved the highest monthly transaction count with **2,190 orders** (\$1,101,023.49).
-- *Note:* March 2025 contains partial-month data (up to March 8) with 538 orders and \$273,128.67.
-
-### 6. Customer Demographics (Age Group Cohorts)
-Segmenting customer ages into five standard analytical bins:
-
-| Age Group | Order Count | Total Revenue (USD) | Average Order Value | Share of Volume |
-| :---: | :---: | :---: | :---: | :---: |
-| **18–25** | 7,443 | \$3,759,841.83 | \$505.15 | 14.9% |
-| **26–35** | 9,513 | \$4,781,196.28 | \$502.60 | 19.0% |
-| **36–45** | 9,628 | \$4,863,329.78 | \$505.12 | 19.3% |
-| **46–55** | 9,303 | \$4,658,823.09 | \$500.79 | 18.6% |
-| **56–70** | 14,113 | \$7,094,798.67 | \$502.71 | **28.2%** |
-
-*Key Insight:* The **56–70 demographic** is the largest revenue contributor (\$7.09M), driven by higher order frequency, while average ticket size remains remarkably stable (~$500–$505) across all life stages.
-
-### 7. Customer Loyalty & Repeat Purchasing
-- **High Lifetime Frequency:** The dataset represents an established repeat-customer pool consisting of **100 unique customer profiles**, each averaging **500 transactions** (ranging between 435 and 568 purchases).
-- **Top Spend Champions:**
-  1. **Sophia Harris:** 568 transactions | \$296,354.98 total spend (\$521.75 AOV)
-  2. **James Allen:** 545 transactions | \$278,079.15 total spend (\$510.24 AOV)
-  3. **Olivia Hall:** 534 transactions | \$277,302.09 total spend (\$519.29 AOV)
-  4. **Isabella Hall:** 539 transactions | \$275,798.04 total spend (\$511.68 AOV)
-  5. **Noah Anderson:** 545 transactions | \$274,347.15 total spend (\$503.39 AOV)
+### 📍 [Task 4: Advanced Analytics & Basic Predictive Modeling](file:///c:/Users/Siddhesh/Desktop/coding/apexplanet-data-analytics/task_4_advanced_analytics/)
+- **Primary Deliverables:** [`task_4_advanced_analytics/`](file:///c:/Users/Siddhesh/Desktop/coding/apexplanet-data-analytics/task_4_advanced_analytics/) & [`task_4_advanced_analytics/README.md`](file:///c:/Users/Siddhesh/Desktop/coding/apexplanet-data-analytics/task_4_advanced_analytics/README.md)
+- **Key Focus:**
+  - **Inferential Statistics (SciPy):** Two-sample Welch's $t$-test (UPI vs Cash on Delivery: $t = -1.0362, p = 0.3001$) and Chi-Square ($\chi^2$) test of categorical independence ($\chi^2 = 34.4129, p = 0.4963$).
+  - **Parametric Estimation:** 95% Confidence Interval for global mean spend ($[\$500.65, \$505.67]$ USD).
+  - **Time-Series Analysis (statsmodels):** Monthly revenue velocity tracking (~$1.05M/month run-rate), additive seasonal decomposition, and rolling 3-month moving average forecasting evaluated on held-out test data (MAPE = 3.08%).
+  - **Customer Segmentation (scikit-learn):** Account-level feature engineering across 100 customer labels, `StandardScaler`, Elbow Method & Silhouette optimization ($K=4$, peak score = 0.398), 2D PCA projection (99.4% variance explained), and 4 behavioral segment profiles.
+  - **Predictive Modeling:** Production scikit-learn `Pipeline` (`StandardScaler` + `OneHotEncoder` + `LinearRegression`) predicting `Purchase_Amount`, data leakage prevention, chronological vs random split diagnostics, residual homoscedasticity checks, and feature coefficient auditing.
+  - **Deliverables & Viva Prep:** Fully executed 1.29 MB Jupyter Notebook, 8 high-res PNG plots, serialized model pipeline (`.joblib`), executive report, and 20+ viva interview questions.
 
 ---
 
-## 💡 Business Recommendations
+## 📊 High-Level Business Insights Summary
 
-1. **VIP Loyalty & Retention Tiering:** Top spenders (e.g., customers spending >\$270,000) should be enrolled into an exclusive VIP loyalty program featuring dedicated support, priority fulfillment, and custom bundled rewards to maximize customer lifetime value (CLV).
-2. **Targeted Campaigns for Senior Demographics:** Customers aged 56–70 drive over 28% of total gross revenue. Tailoring UI accessibility, specialized recommendations, and home/leisure product promotions towards this segment can yield high conversion.
-3. **Checkout Optimization for Local Payment Rails:** Cash on Delivery, UPI, and debit cards account for the largest shares. Continuing to streamline one-click checkout and UPI deep-linking will minimize friction and cart abandonment.
-4. **Category Cross-Selling Strategies:** Given balanced cross-border demand across all 8 product categories, implementing AI-driven cross-selling algorithms (e.g., pairing Sports gear with Electronics or Home & Kitchen with Groceries) will help lift basket sizes beyond the \$503 baseline.
-
----
-
-## 🛠️ Tech Stack & Libraries
-
-- **Language:** Python 3.10+
-- **Data Manipulation:** [Pandas](https://pandas.pydata.org/) (DataFrames, GroupBy, Pivot Tables, Datetime operations), [NumPy](https://numpy.org/)
-- **Data Visualization:** [Matplotlib](https://matplotlib.org/), [Seaborn](https://seaborn.pydata.org/)
-- **Development Environment:** Jupyter Notebook / VS Code
+- **Total Gross Sales:** **\$25,157,989.23** across **50,000 transactions**.
+- **Average Order Value (AOV):** **\$503.16** (Median: \$503.11, Std Dev: \$286.56).
+- **Balanced Product Portfolio:** Revenue across all 8 product categories is evenly distributed, led by **Sports (\$3.20M)** and anchored by **Beauty (\$3.06M)** (variance < 4.5%).
+- **Predictable Revenue Run-Rate:** Consistent monthly revenue between **\$1.00M and \$1.11M**, peaking in **July 2023 (\$1.11M)**, with peak order volume in **January 2024 (2,190 orders)**.
+- **Geographic Spend Parity:** 10 international markets contribute ~\$2.5M each; **USA** drives the highest Average Order Value (**\$510.39**), while **France (\$2.55M)** leads gross volume.
+- **Payment Method Coexistence:** **Cash on Delivery (\$4.28M)** and **UPI (\$4.26M)** lead adoption, demonstrating the parity of digital and traditional settlement rails.
+- **Price-Age Independence:** Pearson correlation between customer age and spend is **r = -0.0036**, showing price sensitivity is uniform across age cohorts.
+- **Senior Demographic Power:** Customers aged **56–70** contribute **28.2% (\$7.09M)** of total sales across 14,113 orders.
+- **VIP Customer Loyalty:** 100 customer account labels generate the 50,000 transactions (averaging 500 orders each), led by **Sophia Harris** (\$296,354.98 across 568 orders).
 
 ---
 
-## 🚀 Getting Started & Reproduction
-
-### Prerequisites
-Make sure you have Python 3.10+ installed.
-
-### 1. Clone the Repository
-```bash
-git clone https://github.com/your-username/apexplanet-data-analytics.git
-cd apexplanet-data-analytics
-```
-
-### 2. Set Up Virtual Environment
-```bash
-# Windows
-python -m venv .venv
-.venv\Scripts\activate
-
-# macOS / Linux
-python3 -m venv .venv
-source .venv/bin/activate
-```
-
-### 3. Install Required Dependencies
-```bash
-pip install pandas numpy matplotlib seaborn jupyter
-```
-
-### 4. Launch the Analysis Notebook
-```bash
-jupyter notebook notebooks/Ecommerce.ipynb
-```
+## 🛠️ Tech Stack & Environment
+- **Languages & Frameworks:** Python 3.10+, SQL (PostgreSQL dialect)
+- **Data Science Libraries:** Pandas 3.x, NumPy 2.x, SciPy 1.18, statsmodels 0.15, SQLAlchemy
+- **Machine Learning & Modeling:** scikit-learn 1.9, joblib
+- **Data Visualization:** Matplotlib 3.11, Seaborn 0.13, Plotly 7.1
+- **Business Intelligence:** Microsoft Power BI Desktop, DAX, Power Query
+- **Development Tools:** JupyterLab, VS Code, Git, pgAdmin 4
 
 ---
 
 ## 👤 Author & Acknowledgments
-
 - **Intern:** Siddhesh
 - **Role:** Data Analytics Intern
 - **Organization:** [ApexPlanet Solutions](https://apexplanetsolutions.com/)
-- **Project:** Day 1 — Exploratory Data Analysis on E-Commerce Transactions
+- **Academic Discipline:** B.Tech Artificial Intelligence and Data Science (1st Year)
