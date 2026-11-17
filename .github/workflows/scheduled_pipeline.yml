@@ -1,0 +1,50 @@
+name: Automated Analytics Pipeline
+
+on:
+  schedule:
+    # Run daily at 06:00 UTC (11:30 AM IST)
+    - cron: '0 6 * * *'
+  workflow_dispatch: # Allows manual trigger from GitHub UI
+  push:
+    branches: [ main ]
+    paths:
+      - 'data/ecommerce_transactions.csv'
+      - 'scripts/automate_pipeline.py'
+
+jobs:
+  run-pipeline:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Execute Automated Pipeline
+        run: |
+          python scripts/automate_pipeline.py
+
+      - name: Verify Processed Outputs
+        run: |
+          test -f data/processed/ecommerce_transactions_cleaned.csv || exit 1
+          test -f outputs/Automated_Analytics_Report.xlsx || exit 1
+          test -f logs/pipeline.log || exit 1
+          echo "Pipeline executed successfully and generated all target deliverables."
+
+      - name: Upload Analytics Artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: automated-analytics-deliverables
+          path: |
+            data/processed/ecommerce_transactions_cleaned.csv
+            outputs/Automated_Analytics_Report.xlsx
+            logs/pipeline.log
